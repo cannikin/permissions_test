@@ -1,0 +1,27 @@
+<h1>Listing permissions</h1>
+
+<table>
+  <tr>
+    <th>Role</th>
+    <th>Permission type</th>
+    <th>Enabled</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @permissions.each do |permission| %>
+  <tr>
+    <td><%= permission.role.name %></td>
+    <td><%= [permission.permission_type.object_type, permission.permission_type.klass, permission.permission_type.key].join('.') %></td>
+    <td><%= permission.enabled %></td>
+    <td><%= link_to 'Show', permission %></td>
+    <td><%= link_to 'Edit', edit_permission_path(permission) %></td>
+    <td><%= link_to 'Destroy', permission, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Permission', new_permission_path %>

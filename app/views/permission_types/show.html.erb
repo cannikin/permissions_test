@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @permission_type.type %>
+</p>
+
+<p>
+  <b>For:</b>
+  <%= @permission_type.for %>
+</p>
+
+<p>
+  <b>Key:</b>
+  <%= @permission_type.key %>
+</p>
+
+
+<%= link_to 'Edit', edit_permission_type_path(@permission_type) %> |
+<%= link_to 'Back', permission_types_path %>

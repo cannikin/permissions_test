@@ -1,0 +1,27 @@
+<h1>Listing permission_types</h1>
+
+<table>
+  <tr>
+    <th>Object Type</th>
+    <th>Klass</th>
+    <th>Key</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @permission_types.each do |permission_type| %>
+  <tr>
+    <td><%= permission_type.object_type %></td>
+    <td><%= permission_type.klass %></td>
+    <td><%= permission_type.key %></td>
+    <td><%= link_to 'Show', permission_type %></td>
+    <td><%= link_to 'Edit', edit_permission_type_path(permission_type) %></td>
+    <td><%= link_to 'Destroy', permission_type, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Permission type', new_permission_type_path %>

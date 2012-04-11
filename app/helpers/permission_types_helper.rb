@@ -1,0 +1,2 @@
+module PermissionTypesHelper
+end

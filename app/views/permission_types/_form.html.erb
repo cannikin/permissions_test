@@ -1,0 +1,29 @@
+<%= form_for(@permission_type) do |f| %>
+  <% if @permission_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@permission_type.errors.count, "error") %> prohibited this permission_type from being saved:</h2>
+
+      <ul>
+      <% @permission_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :object_type %><br />
+    <%= f.text_field :object_type %>
+  </div>
+  <div class="field">
+    <%= f.label :klass %><br />
+    <%= f.text_field :klass %>
+  </div>
+  <div class="field">
+    <%= f.label :key %><br />
+    <%= f.text_field :key %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

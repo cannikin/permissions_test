@@ -1,0 +1,29 @@
+<%= form_for(@permission) do |f| %>
+  <% if @permission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@permission.errors.count, "error") %> prohibited this permission from being saved:</h2>
+
+      <ul>
+      <% @permission.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :role_id %><br />
+    <%= f.select :role_id, options_for_select(Role.all.map { |r| [r.name,r.id] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :permission_type_id %><br />
+    <%= f.select :permission_type_id, options_for_select(PermissionType.all.map { |pt| [[pt.object_type,pt.klass,pt.key].join('.'),pt.id] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :enabled %><br />
+    <%= f.check_box :enabled %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

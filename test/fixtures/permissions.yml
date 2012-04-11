@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  role_id: 
+  permission_type_id: 
+  enabled: false
+
+two:
+  role_id: 
+  permission_type_id: 
+  enabled: false
