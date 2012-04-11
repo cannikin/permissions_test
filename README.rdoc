@@ -1,4 +1,5 @@
 == Sample Output
 
     User.first.permission
-    => {:view=>{:vendor=>{:index=>true, :edit=>true, :new=>false, :destroy=>false}}, :model=>{:vendor=>{:"name.view"=>true, :"name.edit"=>false}}}
+    => {:view=>{:vendor=>{:index=>true, :edit=>true, :new=>false, :destroy=>false}}, 
+        :model=>{:vendor=>{:"name.view"=>true, :"name.edit"=>false}}}
